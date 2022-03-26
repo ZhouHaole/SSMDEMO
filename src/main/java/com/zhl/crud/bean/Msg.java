@@ -17,7 +17,7 @@ public class Msg {
     public static Msg success(){
         Msg result=new Msg();
         result.setCode(100);
-        result.setMsg("处理成功!");
+        result.setMsg("处理成功!"+"!!");
         return result;
     }
 
