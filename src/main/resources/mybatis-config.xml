@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    &lt;!&ndash;引入properties文件&ndash;&gt;-->
+<!--    <properties resource="jdbc.properties"></properties>-->
+    
+    <typeAliases>
+        <!--设置类型别名,不区分大小写;不写alias别名默认为本身的类名-->
+        <!--&lt;!&ndash;        <typeAlias type="com.zhl.mybatis.pojo.User" alias="User"></typeAlias>&ndash;&gt;-->
+        <!--        <typeAlias type="com.zhl.mybatis.pojo.User"></typeAlias>-->
+
+        <!--以包为单位,将包下所有的类型设置为默认的类型别名,即类名且不区分大小写-->
+        <package name="com.zhl.crud.bean"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--分页参数合理化  -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+<!--    &lt;!&ndash;配置连接数据库的环境&ndash;&gt;-->
+<!--    <environments default="development">-->
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="${jdbc.driver}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+<!--    </environments>-->
+
+<!--    &lt;!&ndash;引入映射文件&ndash;&gt;-->
+<!--    <mappers>-->
+<!--        &lt;!&ndash;        <mapper resource="mappers/UserMapper.xml"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;以包为单位引入映射文件-->
+<!--            要求: 1.mapper接口所在的包要和映射文件所在的包保持一致-->
+<!--                 2.mapper接口要和映射文件的名字保持一致-->
+<!--                 3.创建映射文件的包的文件名用/替代.&ndash;&gt;-->
+<!--        <package name="com.zhl.crud.mapper"/>-->
+<!--    </mappers>-->
+</configuration>
